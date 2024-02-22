@@ -1,2 +1,6 @@
 __pycache__/
 .vscode/
+
+creds.json
+mail_storage.db
+token.pickle

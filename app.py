@@ -150,17 +150,21 @@ def compute_time_limit(date_ranges):
 
 def modify_mails(service, mail_rows, input_data):
     """Modify mails based on specified actions."""
+    print("Modifying Mails")
     for mr in mail_rows:
+        print("Modifying Mail Subject :", mr[4])
         mail_id = mr[0]
         for action in input_data["actions"]:
             body = None
             if action["action_type"] == "VIEW":
+                print("Marking eamil:", action["mark"])
                 body = (
                     {"removeLabelIds": ["UNREAD"]}
                     if action["mark"] == "READ"
                     else {"addLabelIds": ["UNREAD"]}
                 )
             elif action["action_type"] == "MOVE":
+                print("Marking eamil:", action["destination"])
                 body = {"addLabelIds": [action["destination"]]}  # Move to folder
 
             try:

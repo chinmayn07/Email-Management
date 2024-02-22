@@ -17,8 +17,9 @@ class DBHandler:
 
     def create_connection(self):
         try:
-            self.conn = sqlite3.connect(self.db_name)
+            conn = sqlite3.connect(self.db_name)
             print(f"Connected to database: {self.db_name}")
+            return conn
         except sqlite3.Error as e:
             print("Error connecting to Database:", e)
 

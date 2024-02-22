@@ -1,0 +1,27 @@
+{
+  "condition_type": "ALL",
+  "condition_list": [
+    {
+      "field": "sender",
+      "comparison_type": "equals",
+      "value": "noreply@google.com"
+    },
+    { "field": "receiver", "comparison_type": "includes", "value": "chinmay" },
+    { "field": "subject", "comparison_type": "includes", "value": "6-" },
+    {
+      "field": "mail_date",
+      "comparison_type": "lesser than",
+      "value": { "days": "", "months": "" }
+    }
+  ],
+  "actions": [
+    {
+      "action_type": "VIEW",
+      "mark": "UNREAD"
+    },
+    {
+      "action_type": "MOVE",
+      "destination": "STARRED"
+    }
+  ]
+}
